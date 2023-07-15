@@ -1,0 +1,155 @@
+.node {
+    width: 25px;
+    height: 25px;
+    outline: 1px solid #757575;
+    display: inline-block;
+    margin: 5px;
+    pointer-events: auto;
+  }
+  
+  .node-start {
+    background-image: url("./../assets/startLocation.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: reveal;
+    animation-duration: 0.6s;
+    animation-delay: 0.25s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+  }
+  
+  .node-finish {
+    background-image: url("./../assets/treasureChest.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: reveal;
+    animation-duration: 0.6s;
+    animation-delay: 0.25s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes reveal {
+    0% {
+      transform: scale(3);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .node-wall {
+    background-color: #081b2e;
+    animation-name: build;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes build {
+    0% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .node-visited {
+    background-color: lightgreen;
+    animation-name: visitedAnimation;
+    animation-duration: 0.25s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes visitedAnimation {
+    0% {
+      transform: scale(0.3);
+      background-color: #004433;
+    }
+  
+    50% {
+      background-color: #006c44;
+    }
+  
+    75% {
+      transform: scale(1.2);
+      background-color: #00ac6d;
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: #00d386;
+    }
+  }
+  
+  .node-path {
+    animation-name: shortestPath;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+  
+  @keyframes shortestPath {
+    0% {
+      transform: scale(0.6);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+      background-color: #fff66f;
+    }
+  }
+  
+  /* Node styling on the Key/Legend on the bottom of the desktop screen */
+  
+  .node-key {
+    width: 30px;
+    height: 30px;
+    outline: 1px solid #757575;
+    display: inline-block;
+    pointer-events: auto;
+  }
+  
+  .node-start-key {
+    background-image: url("./../assets/startLocation.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .node-finish-key {
+    background-image: url("./../assets/treasureChest.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .node-wall-key {
+    background-color: #081b2e;
+  }
+  
+  .node-visited-key {
+    background-color: #00d386;
+  }
+  
+  .node-path-key {
+    background-color: #fff66f;
+  }
+  
